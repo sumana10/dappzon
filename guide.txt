@@ -1,0 +1,10 @@
+1.npx create-react-app@latest ./
+2.npx hardhat(Here we need to choose about our project);
+3. install -> npm i --dev hardhat chai @nomicfoundation/hardhat-toolbox(npm install --save-dev hardhat)
+4.just run npx hardhat test(if u find any error plz follow that error)
+5.hardhat.config-> need to get ethers from hardhat not from ethers -> const {ethers}=require("hardhat);
+6.ethers.utils.parseUnits->Replaced By ethers.parseUnits
+7.Once we have done all the Smart Contract and Smoke test then we can push or place this one into Block Chain
+8.write a command like npx hardhat node it will start run the block chain node for us
+9.write deploy.js file code
+10.npx hardhat run ./scripts/deploy.js --network localhost run this command
