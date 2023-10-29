@@ -7,4 +7,12 @@
 7.Once we have done all the Smart Contract and Smoke test then we can push or place this one into Block Chain
 8.write a command like npx hardhat node it will start run the block chain node for us
 9.write deploy.js file code
-10.npx hardhat run ./scripts/deploy.js --network localhost run this command
+10.open 2 terminals first run npx hardhat node it will run nodes for you from here will get JSON-RPC Id Copy that one and need to add this one into metamask network
+11.npx hardhat run ./scripts/deploy.js --network localhost run this command
+
+FRONT END SECTION:
+    -Create Components Folder:
+                -Navigation.js , Product.js,Rating.js,Section.js
+12.Next go to the App.js file import Components Files
+13.window will give all the information about our laptop opended window.
+    -window.etherem it will all the stuff which will need to develop the etheri based application
