@@ -16,3 +16,4 @@ FRONT END SECTION:
 12.Next go to the App.js file import Components Files
 13.window will give all the information about our laptop opended window.
     -window.etherem it will all the stuff which will need to develop the etheri based application
+14.While adding abis data we need to get thhat data from artifacts/contracts/Dappazon.json here we need to take only abis information [ tis information only no need abis=[] only we need [ section]] 

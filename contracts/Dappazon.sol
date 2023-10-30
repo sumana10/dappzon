@@ -58,6 +58,12 @@ contract Dappazon{
         //emit an event
         emit List(_name,_cost,_stock);
     }
+
+    // for getting items based on the IDs
+    function getItemsDetails(uint256 _id) public view returns(Item memory){
+        return items[_id];
+    }
+
     //BUY PRODUCTS
     function buy(uint256 _id) public payable{
         //Recieve Amount(Crypto) by using payable we can recive amount

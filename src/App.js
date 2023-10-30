@@ -8,15 +8,15 @@ import Section from  "./components/Section";
 import Product from "./components/Product";
 
 //ABIS
-
-// 0x5FbDB2315678afecb367f032d93F642f64180aa3
-
+import Dappazon from "./abis/Dappazon.json";
 //Config
+import config from "./config.json"
 
 function App() {
   const [account,setAccount]=useState(null);
   const [provider,setProvider]=useState(null);
-
+  //for storing smart contract address here
+  const [dappazon,setDappazon]=useState(null);
   //lets conncect to block chain data and get the account details;
   const loadBlockChainData= async()=>{
     // console.log(window.ethereum.selectedAddress);
@@ -26,11 +26,31 @@ function App() {
     
 
     //Connect to Block Chain
+    //to communicate with blockchain networks, such as Ethereum.
     const provider = new ethers.BrowserProvider(window.ethereum);
     setProvider(provider);
 
     const network= await provider.getNetwork();
-    console.log(network);
+ 
+    //Connect to Smart Contract Which was deployed in Block Chain
+
+    const dappazon=new ethers.Contract(config[network.chainId].dappazon.address,Dappazon,provider);
+    setDappazon(dappazon);
+
+    //Load Listed Products
+    console.log(dappazon)
+    const items=[];
+
+    for(var i=0;i<9;i++){
+      const item=await dappazon.items(i+1);
+      items.push(item)
+    }
+
+    // try {
+    //   console.log(items)
+    // } catch (error) {
+    //   console.error(error);
+    // }
 
   };
   useEffect(()=>{
